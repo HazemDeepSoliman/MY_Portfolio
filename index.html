@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazem Deep Soliman - AI Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .warm-gradient {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 30%, #404040 70%, #555555 100%);
+        }
+        
+        .orange-gradient {
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+        }
+        
+        .brown-gradient {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+        }
+        
+        .nvidia-gradient {
+            background: linear-gradient(45deg, #76b900, #5a8f00);
+        }
+        
+        .floating-icon {
+            animation: float 6s ease-in-out infinite;
+            position: absolute;
+        }
+        
+        .floating-icon:nth-child(1) { animation-delay: 0s; }
+        .floating-icon:nth-child(2) { animation-delay: 1s; }
+        .floating-icon:nth-child(3) { animation-delay: 2s; }
+        .floating-icon:nth-child(4) { animation-delay: 3s; }
+        .floating-icon:nth-child(5) { animation-delay: 4s; }
+        .floating-icon:nth-child(6) { animation-delay: 5s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(90deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+            75% { transform: translateY(-30px) rotate(270deg); }
+        }
+        
+        .orbit-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        
+        .orbit-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            animation: orbit 20s linear infinite;
+        }
+        
+        .orbit-icon:nth-child(1) {
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 0s;
+        }
+        
+        .orbit-icon:nth-child(2) {
+            background: linear-gradient(45deg, #5cb85c, #449d44);
+            top: 25%;
+            right: 0;
+            animation-delay: -3.33s;
+        }
+        
+        .orbit-icon:nth-child(3) {
+            background: linear-gradient(45deg, #f0ad4e, #ec971f);
+            bottom: 25%;
+            right: 0;
+            animation-delay: -6.66s;
+        }
+        
+        .orbit-icon:nth-child(4) {
+            background: linear-gradient(45deg, #d9534f, #c9302c);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: -10s;
+        }
+        
+        .orbit-icon:nth-child(5) {
+            background: linear-gradient(45deg, #5bc0de, #31b0d5);
+            bottom: 25%;
+            left: 0;
+            animation-delay: -13.33s;
+        }
+        
+        .orbit-icon:nth-child(6) {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            top: 25%;
+            left: 0;
+            animation-delay: -16.66s;
+        }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
+        }
+        
+        .avatar-3d {
+            background: linear-gradient(145deg, #4a90e2, #357abd);
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 20px 40px rgba(74, 144, 226, 0.3),
+                inset 0 -10px 20px rgba(0, 0, 0, 0.2),
+                inset 0 10px 20px rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .avatar-3d input[type="file"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .avatar-3d::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+            pointer-events: none;
+        }
+        
+        .avatar-3d img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 140, 0, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .typing-cursor {
+            border-right: 3px solid #4a90e2;
+            animation: blink 1s infinite;
+            display: inline-block;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #4a90e2; }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        .nav-tab {
+            position: relative;
+            padding: 12px 24px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+        
+        .nav-tab:hover, .nav-tab.active {
+            background: rgba(74, 144, 226, 0.2);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .gradient-button {
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            border-radius: 25px;
+            padding: 12px 30px;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .gradient-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+            color: white;
+        }
+        
+        .skill-orbit {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .orbit-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .orbit-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            
+            @keyframes orbit {
+                0% { transform: rotate(0deg) translateX(130px) rotate(0deg); }
+                100% { transform: rotate(360deg) translateX(130px) rotate(-360deg); }
+            }
+            
+            .avatar-3d {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .skill-orbit {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body class="warm-gradient min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-card">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-white">
+                    Hazem <span class="gradient-text">Deep</span>
+                </div>
+                <div class="hidden lg:flex space-x-2">
+                    <a href="#cover" class="nav-tab active">Cover</a>
+                    <a href="#about" class="nav-tab">About</a>
+                    <a href="#skills" class="nav-tab">Skills</a>
+                    <a href="#education" class="nav-tab">Education</a>
+                    <a href="#experience" class="nav-tab">Experience</a>
+                    <a href="#services" class="nav-tab">Services</a>
+                    <a href="#projects" class="nav-tab">Projects</a>
+                    <a href="#testimonials" class="nav-tab">Testimonials</a>
+                    <a href="#contact" class="nav-tab">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <div class="mobile-menu lg:hidden mt-4 space-y-2">
+                <a href="#cover" class="block nav-tab">Cover</a>
+                <a href="#about" class="block nav-tab">About</a>
+                <a href="#skills" class="block nav-tab">Skills</a>
+                <a href="#education" class="block nav-tab">Education</a>
+                <a href="#experience" class="block nav-tab">Experience</a>
+                <a href="#services" class="block nav-tab">Services</a>
+                <a href="#projects" class="block nav-tab">Projects</a>
+                <a href="#testimonials" class="block nav-tab">Testimonials</a>
+                <a href="#contact" class="block nav-tab">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cover Section (Hero) -->
+    <section id="cover" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Floating Tech Icons -->
+        <div class="orbit-container absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20">
+            <div class="orbit-icon">
+                <i class="fab fa-python"></i>
+            </div>
+            <div class="orbit-icon">
+                <i class="fas fa-brain"></i>
+            </div>
+            <div class="orbit-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="orbit-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+            <div class="orbit-icon">
+                <i class="fab fa-js"></i>
+            </div>
+            <div class="orbit-icon">
+                <i class="fas fa-code"></i>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+            <div class="mb-12">
+                <h1 class="text-4xl md:text-6xl lg:text-8xl font-black text-white mb-6 leading-tight">
+                    Hazem Deep
+                    <span class="gradient-text block">Soliman</span>
+                </h1>
+                <div class="text-xl md:text-2xl lg:text-4xl text-white mb-8 font-light">
+                    <span id="typing-text" class="typing-cursor">AI Engineer & ML Specialist</span>
+                </div>
+                <p class="text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Crafting intelligent solutions through cutting-edge machine learning, 
+                    deep learning, and computer vision technologies.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#contact" class="gradient-button text-center">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Let's Collaborate
+                    </a>
+                    <a href="#services" class="glass-card px-8 py-3 text-white font-semibold hover:bg-white/20 transition-all text-center no-underline">
+                        View My Services
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D Avatar with Photo Upload -->
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+            <div class="avatar-3d" title="Click to upload your photo">
+                <input type="file" id="avatar-upload" accept="image/*">
+                <i class="fas fa-user-astronaut text-6xl text-white" id="default-avatar"></i>
+                <img id="user-photo" style="display: none;" alt="User Avatar">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-gradient-to-b from-transparent to-black/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    About <span class="gradient-text">Me</span>
+                </h2>
+                <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="glass-card p-10">
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">AI Visionary</h3>
+                    <p class="text-white/80 mb-6 text-base md:text-lg leading-relaxed">
+                        I'm an AI Engineer passionate about creating intelligent solutions that bridge 
+                        the gap between complex algorithms and real-world applications.
+                    </p>
+                    <p class="text-white/80 mb-8 text-base md:text-lg leading-relaxed">
+                        Currently pursuing my Bachelor's in Artificial Intelligence at Beni Suef National University, 
+                        combining academic excellence with hands-on innovation.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="glass-card p-4">
+                            <h4 class="text-2xl font-bold gradient-text">15+</h4>
+                            <p class="text-white/70">Projects Completed</p>
+                        </div>
+                        <div class="glass-card p-4">
+                            <h4 class="text-2xl font-bold gradient-text">3+</h4>
+                            <p class="text-white/70">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="skill-orbit mx-auto">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-32 h-32 orange-gradient rounded-full flex items-center justify-center">
+                                <i class="fas fa-brain text-4xl text-white"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating skill icons around center -->
+                        <div class="floating-icon top-0 left-1/2 transform -translate-x-1/2">
+                            <div class="w-16 h-16 brown-gradient rounded-full flex items-center justify-center">
+                                <i class="fab fa-python text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="floating-icon top-1/4 right-0">
+                            <div class="w-16 h-16 orange-gradient rounded-full flex items-center justify-center">
+                                <i class="fas fa-robot text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="floating-icon bottom-1/4 right-0">
+                            <div class="w-16 h-16 brown-gradient rounded-full flex items-center justify-center">
+                                <i class="fas fa-eye text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="floating-icon bottom-0 left-1/2 transform -translate-x-1/2">
+                            <div class="w-16 h-16 orange-gradient rounded-full flex items-center justify-center">
+                                <i class="fas fa-code text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="floating-icon bottom-1/4 left-0">
+                            <div class="w-16 h-16 brown-gradient rounded-full flex items-center justify-center">
+                                <i class="fab fa-js text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="floating-icon top-1/4 left-0">
+                            <div class="w-16 h-16 orange-gradient rounded-full flex items-center justify-center">
+                                <i class="fas fa-database text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-32 bg-gradient-to-b from-black/20 to-black/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    Core <span class="gradient-text">Skills</span>
+                </h2>
+                <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-8 hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-6 gradient-text text-center">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-4 text-center">Machine Learning</h3>
+                    <div class="space-y-3">
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">NLP</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">CNN</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Neural Networks</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">TensorFlow</div>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-8 hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-6 gradient-text text-center">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-4 text-center">Computer Vision</h3>
+                    <div class="space-y-3">
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Image Classification</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Object Detection</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">FER2013</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">OpenCV</div>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-8 hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-6 gradient-text text-center">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-4 text-center">Robotics & IoT</h3>
+                    <div class="space-y-3">
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Arduino</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">ESP32</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">SLAM</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">ROS</div>
+                    </div>
+                </div>
+
+
+
+                <div class="glass-card p-8 hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-6 gradient-text text-center">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-4 text-center">Natural Language Processing</h3>
+                    <div class="space-y-3">
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Text Analysis</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Sentiment Analysis</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Language Models</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">NLTK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-32 bg-gradient-to-b from-black/40 to-black/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    Education & <span class="gradient-text">Certificates</span>
+                </h2>
+                <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div class="glass-card p-10">
+                    <div class="flex items-center mb-8">
+                        <div class="w-16 h-16 orange-gradient rounded-full flex items-center justify-center mr-6">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Education</h3>
+                            <div class="w-12 h-1 bg-white/30 rounded-full mt-2"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/10 p-8 rounded-2xl border-l-4 border-blue-400">
+                        <h4 class="text-xl font-semibold text-white mb-2">Bachelor of Science in Artificial Intelligence</h4>
+                        <p class="text-blue-300 font-medium mb-2">Beni Suef National University</p>
+                        <p class="text-white/70 mb-6">Sep 2022 - Present</p>
+                        
+                        <div class="space-y-3">
+                            <p class="text-sm font-medium text-white/90">Relevant Coursework:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Machine Learning</span>
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Deep Learning</span>
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Computer Vision</span>
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">NLP</span>
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Data Structures</span>
+                                <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Software Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificates -->
+                <div class="glass-card p-10">
+                    <div class="flex items-center mb-8">
+                        <div class="w-16 h-16 brown-gradient rounded-full flex items-center justify-center mr-6">
+                            <i class="fas fa-certificate text-white text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Certificates</h3>
+                            <div class="w-12 h-1 bg-white/30 rounded-full mt-2"></div>
+                        </div>
+                    </div>
+                    
+                <div class="space-y-6">
+    <!-- NVIDIA Certificate -->
+    <div class="bg-white/10 p-6 rounded-xl border-l-4 border-green-400 hover:transform hover:scale-105 transition-all duration-300">
+        <div class="flex items-center space-x-4">
+            <div class="text-2xl text-green-400">
+                <i class="fas fa-award"></i>
+            </div>
+            <div class="flex-1">
+                <h4 class="font-semibold text-white">Fundamentals of Accelerated Computing with CUDA Python</h4>
+                <p class="text-green-300">NVIDIA Deep Learning Institute</p>
+                <p class="text-sm text-white/70">2025</p>
+            </div>
+            <a href="https://learn.nvidia.com/certificates?id=Fl6eh87OQVecA4V0CIfXAg" target="_blank" class="text-green-400 hover:text-green-300">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </div>
+
+                    <!-- Kaggle Intro to Machine Learning Certificate -->
+                    <div class="bg-white/10 p-6 rounded-xl border-l-4 border-blue-400 hover:transform hover:scale-105 transition-all duration-300">
+                        <div class="flex items-center space-x-4">
+                            <div class="text-2xl text-blue-400">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Intro to Machine Learning</h4>
+                                <p class="text-blue-300">Kaggle Learn</p>
+                                <p class="text-sm text-white/70">2024</p>
+                            </div>
+                            <a href="https://www.kaggle.com/learn/certification/hazemdeep/intro-to-machine-learning" target="_blank" class="text-blue-400 hover:text-blue-300">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Kaggle Intro to Deep Learning Certificate -->
+                    <div class="bg-white/10 p-6 rounded-xl border-l-4 border-purple-400 hover:transform hover:scale-105 transition-all duration-300">
+                        <div class="flex items-center space-x-4">
+                            <div class="text-2xl text-purple-400">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-white">Intro to Deep Learning</h4>
+                                <p class="text-purple-300">Kaggle Learn</p>
+                                <p class="text-sm text-white/70">2024</p>
+                            </div>
+                            <a href="https://www.kaggle.com/learn/certification/hazemdeep/intro-to-deep-learning" target="_blank" class="text-purple-400 hover:text-purple-300">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-32 bg-gradient-to-b from-black/20 to-black/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    My <span class="gradient-text">Experience</span>
+                </h2>
+                <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Experience Item 1 -->
+                <div class="glass-card p-8 hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">NLP Course Student</h3>
+                            <p class="text-blue-300 font-medium mb-2">National Technology Institute (NTI)</p>
+                            <p class="text-white/70">2024</p>
+                        </div>
+                        <div class="w-16 h-16 orange-gradient rounded-full flex items-center justify-center mt-4 md:mt-0">
+                            <i class="fas fa-comment-dots text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-white/80">• Completed comprehensive Natural Language Processing course</p>
+                        <p class="text-white/80">• Developed AI Security Assistant for Safe Browsing using NLP techniques</p>
+                        <p class="text-white/80">• Applied text analysis and security classification algorithms</p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="glass-card p-8 hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Gaming Business Entrepreneur</h3>
+                            <p class="text-blue-300 font-medium mb-2">Independent Business</p>
+                            <p class="text-white/70">2022 - Present</p>
+                        </div>
+                        <div class="w-16 h-16 brown-gradient rounded-full flex items-center justify-center mt-4 md:mt-0">
+                            <i class="fas fa-gamepad text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-white/80">• Trusted Video Game Accounts Seller for Marvel, Valorant, LoL, and Rocket League</p>
+                        <p class="text-white/80">• Provide secure transactions and lightning-fast delivery worldwide</p>
+                        <p class="text-white/80">• Built reputation for reliable after-sale support and customer satisfaction</p>
+                    </div>
+                </div>
+
+
+
+
+
+                 <div class="glass-card p-8 hover:transform hover:scale-105 transition-all duration-300">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">AI Student & Researcher</h3>
+                            <p class="text-blue-300 font-medium mb-2">Beni Suef National University</p>
+                            <p class="text-white/70">2022 - Present</p>
+                        </div>
+                        <div class="w-16 h-16 nvidia-gradient rounded-full flex items-center justify-center mt-4 md:mt-0">
+                            <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <p class="text-white/80">• Working on various NLP, ML, DL, and Computer Vision projects</p>
+                        <p class="text-white/80">• Developing practical AI solutions through academic coursework</p>
+                        <p class="text-white/80">• Participating in research projects and technical competitions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-gradient-to-b from-black/40 to-black/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    Offered <span class="gradient-text">Services</span>
+                </h2>
+                <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-6 gradient-text text-center">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Machine Learning Solutions</h3>
+                    <p class="text-white/80 mb-6 text-center">Custom ML models for prediction, classification, and data analysis</p>
+                    <ul class="space-y-2 text-white/70">
+                        <li>• Predictive modeling</li>
+                        <li>• Classification algorithms</li>
+                        <li>• Data preprocessing</li>
+                        <li>• Model optimization</li>
+                    </ul>
+
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-6 gradient-text text-center">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Computer Vision</h3>
+                    <p class="text-white/80 mb-6 text-center">Advanced image processing and recognition systems</p>
+                    <ul class="space-y-2 text-white/70">
+                        <li>• Image classification</li>
+                        <li>• Object detection</li>
+                        <li>• Facial recognition</li>
+                        <li>• OCR solutions</li>
+                    </ul>
+
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-6 gradient-text text-center">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">AI Automation</h3>
+                    <p class="text-white/80 mb-6 text-center">Intelligent automation systems for business processes</p>
+                    <ul class="space-y-2 text-white/70">
+                        <li>• Process automation</li>
+                        <li>• Chatbot development</li>
+                        <li>• Data pipeline creation</li>
+                        <li>• Workflow optimization</li>
+                    </ul>
+
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-6 gradient-text text-center">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">Data Analytics</h3>
+                    <p class="text-white/80 mb-6 text-center">Comprehensive data analysis and visualization</p>
+                    <ul class="space-y-2 text-white/70">
+                        <li>• Data exploration</li>
+                        <li>• Statistical analysis</li>
+                        <li>• Interactive dashboards</li>
+                        <li>• Business insights</li>
+                    </ul>
+
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-6 gradient-text text-center">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">IoT Solutions</h3>
+                    <p class="text-white/80 mb-6 text-center">Smart device integration and IoT system development</p>
+                    <ul class="space-y-2 text-white/70">
+                        <li>• Arduino programming</li>
+                        <li>• Sensor integration</li>
+                        <li>• IoT networks</li>
+                        <li>• Real-time monitoring</li>
+                    </ul>
+
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-6 gradient-text text-center">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 text-center">AI Consultation</h3>
+                    <p class="text-white/80 mb-6 text-center">Expert guidance on AI strategy and implementation</p>
+                    <ul class="space-y-2 text-white/70">
+                        <li>• AI strategy planning</li>
+                        <li>• Technology assessment</li>
+                        <li>• Training sessions</li>
+                        <li>• Implementation roadmap</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 bg-gradient-to-b from-black/20 to-black/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    Featured <span class="gradient-text">Projects</span>
+                </h2>
+                <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card glass-card p-8 rounded-2xl">
+                    <div class="text-4xl mb-6 gradient-text text-center">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Discord Username Checker</h3>
+                    <p class="text-white/80 mb-6">Python-based tool for checking Discord usernames using API requests and server validation</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Python</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Discord API</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Requests</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="gradient-button text-sm px-4 py-2">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                        <a href="#" class="glass-card px-4 py-2 text-white text-sm hover:bg-white/20 transition-all">
+                            <i class="fas fa-play mr-2"></i>Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-card p-8 rounded-2xl">
+                    <div class="text-4xl mb-6 gradient-text text-center">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Autonomous Robot Navigation</h3>
+                    <p class="text-white/80 mb-6">SLAM-based robot navigation system using Arduino and sensors</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Arduino</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">C++</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">ROS</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="gradient-button text-sm px-4 py-2">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                        <a href="#" class="glass-card px-4 py-2 text-white text-sm hover:bg-white/20 transition-all">
+                            <i class="fas fa-video mr-2"></i>Video
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-card p-8 rounded-2xl">
+                    <div class="text-4xl mb-6 gradient-text text-center">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Sales Prediction Dashboard</h3>
+                    <p class="text-white/80 mb-6">ML-powered sales forecasting with interactive visualization</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Python</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Streamlit</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Plotly</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#" class="gradient-button text-sm px-4 py-2">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                        <a href="#" class="glass-card px-4 py-2 text-white text-sm hover:bg-white/20 transition-all">
+                            <i class="fas fa-external-link-alt mr-2"></i>Live
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="project-card glass-card p-8 rounded-2xl">
+                    <div class="text-4xl mb-6 gradient-text text-center">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">AI Security Assistant for Safe Browsing</h3>
+                    <p class="text-white/80 mb-6">Intelligent web security system that protects users from malicious websites and threats</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Python</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">AI/ML</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Streamlit</span>
+                        <span class="bg-white/20 px-3 py-1 rounded-full text-sm text-white">Security</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/HazemDeepSoliman/AI-Security-Assistant-for-Safe-Browsing" target="_blank" class="gradient-button text-sm px-4 py-2">
+                            <i class="fab fa-github mr-2"></i>Code
+                        </a>
+                        <a href="https://github.com/HazemDeepSoliman/AI-Security-Assistant-for-Safe-Browsing#readme" target="_blank" class="glass-card px-4 py-2 text-white text-sm hover:bg-white/20 transition-all">
+                            <i class="fas fa-info-circle mr-2"></i>Details
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-32 bg-gradient-to-b from-black/40 to-black/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    My <span class="gradient-text">Achievements</span>
+                </h2>
+                <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center glass-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-4 gradient-text">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-2">4th Place</h3>
+                    <p class="text-white/80">Valorant Pro Players Competition</p>
+                    <p class="text-sm text-white/60 mt-2">2024</p>
+                </div>
+                
+                <div class="text-center glass-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-4 gradient-text">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-2">15+</h3>
+                    <p class="text-white/80">Projects Completed</p>
+                    <p class="text-sm text-white/60 mt-2">2022-2025</p>
+                </div>
+                
+                <div class="text-center glass-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-4 gradient-text">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-2">4.9/5</h3>
+                    <p class="text-white/80">Client Rating</p>
+                    <p class="text-sm text-white/60 mt-2">Average Score</p>
+                </div>
+                
+                <div class="text-center glass-card p-8 rounded-2xl">
+                    <div class="text-5xl mb-4 gradient-text">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-2">3</h3>
+                    <p class="text-white/80">Certifications</p>
+                    <p class="text-sm text-white/60 mt-2">Industry Recognized</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-32 bg-gradient-to-b from-black/20 to-black/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    Client <span class="gradient-text">Testimonials</span>
+                </h2>
+                <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 orange-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-600">Tech Startup CEO</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 italic">"Hazem delivered an exceptional machine learning solution that increased our prediction accuracy by 40%. His expertise and communication were outstanding."</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 brown-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Ahmed Hassan</h4>
+                            <p class="text-sm text-gray-600">Data Scientist</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 italic">"Working with Hazem was a great experience. His deep understanding of computer vision helped us solve complex image processing challenges."</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 orange-gradient rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Maria Rodriguez</h4>
+                            <p class="text-sm text-gray-600">Project Manager</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700 italic">"Hazem's automation solution streamlined our workflow and saved us 30 hours per week. Professional, reliable, and innovative!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Call to Action) -->
+    <section id="contact" class="py-32 bg-gradient-to-b from-black/40 to-black/60">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    Ready to <span class="gradient-text">Innovate?</span>
+                </h2>
+                <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="glass-card p-12 max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-8">Let's Create Something Amazing Together!</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 orange-gradient rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <span class="text-white text-lg">hazemdeep12@gmail.com</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 orange-gradient rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <span class="text-white text-lg">01090754105</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 orange-gradient rounded-full flex items-center justify-center">
+                                    <i class="fab fa-linkedin text-white"></i>
+                                </div>
+                                <a href="https://www.linkedin.com/in/hazem-deep-54ba9a317" class="text-white text-lg hover:text-blue-400 transition-colors">
+                                    LinkedIn Profile
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 p-6 bg-white/10 rounded-2xl">
+                            <h4 class="text-lg font-semibold text-white mb-4">Why Choose Me?</h4>
+                            <ul class="space-y-2 text-white/80">
+                                <li>✓ 100% Client Satisfaction Rate</li>
+                                <li>✓ Fast Turnaround Time</li>
+                                <li>✓ Cutting-edge AI Solutions</li>
+                                <li>✓ 24/7 Support & Communication</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="text-6xl md:text-8xl mb-8 gradient-text">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">Ready to Get Started?</h3>
+                        <p class="text-white/80 mb-8">
+                            Transform your ideas into intelligent solutions. Let's discuss your next AI project and bring innovation to life!
+                        </p>
+                        <div class="space-y-4">
+                            <a href="mailto:hazemdeep12@gmail.com" class="gradient-button text-lg block w-full py-4">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Start Your Project Now
+                            </a>
+                            <a href="tel:01090754105" class="glass-card px-8 py-4 text-white font-semibold hover:bg-white/20 transition-all block w-full no-underline">
+                                <i class="fas fa-phone mr-2"></i>
+                                Schedule a Call
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-black/80">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="text-2xl font-bold text-white mb-4">
+                Hazem <span class="gradient-text">Deep</span> Soliman
+            </div>
+            <p class="text-white/60 mb-8">AI Engineer • Machine Learning Specialist • Innovation Creator</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.linkedin.com/in/hazem-deep-54ba9a317" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-blue-400 transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="mailto:hazemdeep12@gmail.com" class="text-white/60 hover:text-blue-400 transition-colors">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+                <a href="tel:+201090754105" class="text-white/60 hover:text-blue-400 transition-colors">
+                    <i class="fas fa-phone text-2xl"></i>
+                </a>
+            </div>
+            <div class="border-t border-white/20 pt-8">
+                <p class="text-white/40">© 2025 Hazem Deep Soliman. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Avatar photo upload functionality
+            const avatarUpload = document.getElementById('avatar-upload');
+            const userPhoto = document.getElementById('user-photo');
+            const defaultAvatar = document.getElementById('default-avatar');
+            
+            if (avatarUpload && userPhoto && defaultAvatar) {
+                avatarUpload.addEventListener('change', function(e) {
+                    const file = e.target.files[0];
+                    if (file && file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            userPhoto.src = e.target.result;
+                            userPhoto.style.display = 'block';
+                            defaultAvatar.style.display = 'none';
+                        };
+                        reader.readAsDataURL(file);
+                    } else if (file) {
+                        alert('Please select a valid image file.');
+                    }
+                });
+            }
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (mobileMenu.classList.contains('active')) {
+                        icon.classList.replace('fa-bars', 'fa-times');
+                    } else {
+                        icon.classList.replace('fa-times', 'fa-bars');
+                    }
+                });
+            }
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.nav-tab').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Close mobile menu after clicking
+                        if (mobileMenu.classList.contains('active')) {
+                            mobileMenu.classList.remove('active');
+                            const icon = mobileMenuBtn.querySelector('i');
+                            icon.classList.replace('fa-times', 'fa-bars');
+                        }
+                    }
+                });
+            });
+
+            // Active navigation highlighting
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const navTabs = document.querySelectorAll('.nav-tab');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        current = '#' + section.getAttribute('id');
+                    }
+                });
+                
+                navTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                    if (tab.getAttribute('href') === current) {
+                        tab.classList.add('active');
+                    }
+                });
+            });
+        });
+        
+        function createTypewriterEffect() {
+            const typingElement = document.getElementById('typing-text');
+            if (!typingElement) return;
+            
+            const text = 'AI Engineer & ML Specialist';
+            typingElement.textContent = '';
+            
+            let i = 0;
+            function typeChar() {
+                if (i < text.length) {
+                    typingElement.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeChar, 100);
+                }
+            }
+            
+            setTimeout(typeChar, 1000);
+        }
+
+        createTypewriterEffect();
+
+        // Typing animation
+        const typingElement = document.querySelector('.typing-cursor');
+        const texts = [
+            'AI Engineer & NLP Specialist',
+            'Computer Vision Expert',
+            'Deep Learning Enthusiast',
+            'Robotics Developer',
+            'Pro Gamer XD'
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeText() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+            }
+
+            setTimeout(typeText, isDeleting ? 50 : 100);
+        }
+
+        setTimeout(typeText, 1000);
+    </script>
+</body>
+</html>
