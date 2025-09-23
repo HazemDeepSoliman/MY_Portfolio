@@ -311,6 +311,70 @@
                 height: 250px;
             }
         }
+
+
+        /* Bear trap animation styles */
+        .trap-top {
+            transform-origin: 20px 50px;
+            animation: snapTrap 2s infinite ease-in-out;
+        }
+
+        .trap-bottom {
+            transform-origin: 20px 50px;
+            animation: snapTrapBottom 2s infinite ease-in-out;
+        }
+
+        @keyframes snapTrap {
+            0%, 70% {
+                transform: rotate(0deg);
+            }
+            15%, 55% {
+                transform: rotate(-15deg);
+            }
+        }
+
+        @keyframes snapTrapBottom {
+            0%, 70% {
+                transform: rotate(0deg);
+            }
+            15%, 55% {
+                transform: rotate(15deg);
+            }
+        }
+
+        /* Red glowing effect for cards */
+        .testimonial-card {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 0 30px rgba(220, 38, 38, 0.3);
+            transform: translateY(-5px);
+        }
+
+        /* Pulsing red glow animation */
+        #bear-trap-1, #bear-trap-2, #bear-trap-3 {
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                filter: drop-shadow(0 0 5px #dc2626);
+            }
+            50% {
+                filter: drop-shadow(0 0 20px #dc2626) drop-shadow(0 0 30px #dc2626);
+            }
+        }
+
+        /* Stagger the animations */
+        #bear-trap-2 {
+            animation-delay: 0.7s;
+        }
+
+        #bear-trap-3 {
+            animation-delay: 1.4s;
+        }
     </style>
 </head>
 <body class="warm-gradient min-h-screen">
@@ -504,10 +568,10 @@
                     </div>
                     <h3 class="text-xl md:text-2xl font-bold text-white mb-4 text-center">Machine Learning</h3>
                     <div class="space-y-3">
-                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">NLP</div>
-                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">CNN</div>
                         <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Neural Networks</div>
-                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">TensorFlow</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Deep Learning</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Supervised Learning</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Unsupervised Learning</div>
                     </div>
                 </div>
                 
@@ -517,10 +581,10 @@
                     </div>
                     <h3 class="text-xl md:text-2xl font-bold text-white mb-4 text-center">Computer Vision</h3>
                     <div class="space-y-3">
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">CNN</div>
                         <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Image Classification</div>
                         <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Object Detection</div>
-                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">FER2013</div>
-                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">OpenCV</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Face Recognition</div>
                     </div>
                 </div>
                 
@@ -548,7 +612,7 @@
                         <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Text Analysis</div>
                         <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Sentiment Analysis</div>
                         <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Language Models</div>
-                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">NLTK</div>
+                        <div class="bg-white/10 rounded-full px-4 py-2 text-white text-center">Named Entity Recognition</div>
                     </div>
                 </div>
             </div>
@@ -799,21 +863,6 @@
 
                 </div>
 
-                <!-- Service 4 -->
-                <div class="service-card p-8 rounded-2xl">
-                    <div class="text-5xl mb-6 gradient-text text-center">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4 text-center">Data Analytics</h3>
-                    <p class="text-white/80 mb-6 text-center">Comprehensive data analysis and visualization</p>
-                    <ul class="space-y-2 text-white/70">
-                        <li>• Data exploration</li>
-                        <li>• Statistical analysis</li>
-                        <li>• Interactive dashboards</li>
-                        <li>• Business insights</li>
-                    </ul>
-
-                </div>
 
                 <!-- Service 5 -->
                 <div class="service-card p-8 rounded-2xl">
@@ -967,15 +1016,6 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center glass-card p-8 rounded-2xl">
                     <div class="text-5xl mb-4 gradient-text">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold text-white mb-2">4th Place</h3>
-                    <p class="text-white/80">Valorant Pro Players Competition</p>
-                    <p class="text-sm text-white/60 mt-2">2024</p>
-                </div>
-                
-                <div class="text-center glass-card p-8 rounded-2xl">
-                    <div class="text-5xl mb-4 gradient-text">
                         <i class="fas fa-medal"></i>
                     </div>
                     <h3 class="text-3xl font-bold text-white mb-2">15+</h3>
@@ -1005,25 +1045,60 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-32 bg-gradient-to-b from-black/20 to-black/40">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                    Client <span class="gradient-text">Testimonials</span>
-                </h2>
-                <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card p-8">
+<section id="testimonials" class="py-32 bg-gradient-to-b from-black/20 to-black/40">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                Client <span class="gradient-text">Testimonials</span>
+            </h2>
+            <div class="w-20 h-1 orange-gradient mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Coming Soon Card 1 -->
+            <div class="testimonial-card p-8 relative overflow-hidden bg-gradient-to-br from-red-900/20 to-red-800/10 border border-red-500/30">
+                <div class="absolute inset-0 bg-red-900/60 flex items-center justify-center z-10">
+                    <div class="text-center">
+                        <div id="bear-trap-1" class="mb-6">
+                            <!-- Bear Trap SVG -->
+                            <svg width="80" height="80" viewBox="0 0 100 100" class="mx-auto">
+                                <g fill="#dc2626" stroke="#991b1b" stroke-width="2">
+                                    <!-- Bottom jaw -->
+                                    <path d="M20 60 Q50 70 80 60 L75 50 Q50 65 25 50 Z" class="trap-bottom" />
+                                    <!-- Top jaw -->
+                                    <path d="M20 40 Q50 30 80 40 L75 50 Q50 35 25 50 Z" class="trap-top" />
+                                    <!-- Teeth bottom -->
+                                    <polygon points="25,55 30,45 35,55" />
+                                    <polygon points="35,55 40,45 45,55" />
+                                    <polygon points="45,55 50,45 55,55" />
+                                    <polygon points="55,55 60,45 65,55" />
+                                    <polygon points="65,55 70,45 75,55" />
+                                    <!-- Teeth top -->
+                                    <polygon points="25,45 30,55 35,45" />
+                                    <polygon points="35,45 40,55 45,45" />
+                                    <polygon points="45,45 50,55 55,45" />
+                                    <polygon points="55,45 60,55 65,45" />
+                                    <polygon points="65,45 70,55 75,45" />
+                                    <!-- Spring/hinge -->
+                                    <circle cx="20" cy="50" r="5" />
+                                    <circle cx="80" cy="50" r="5" />
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-red-400 mb-2">COMING SOON</h3>
+                        
+                    </div>
+                </div>
+                
+                <!-- Hidden content behind overlay -->
+                <div class="opacity-20">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 orange-gradient rounded-full flex items-center justify-center mr-4">
                             <i class="fas fa-user text-white"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
-                            <p class="text-sm text-gray-600">Tech Startup CEO</p>
+                            <h4 class="font-semibold text-gray-800">Client Name</h4>
+                            <p class="text-sm text-gray-600">Position</p>
                         </div>
                     </div>
                     <div class="flex mb-4">
@@ -1033,18 +1108,54 @@
                         <i class="fas fa-star text-yellow-400"></i>
                         <i class="fas fa-star text-yellow-400"></i>
                     </div>
-                    <p class="text-gray-700 italic">"Hazem delivered an exceptional machine learning solution that increased our prediction accuracy by 40%. His expertise and communication were outstanding."</p>
+                    <p class="text-gray-700 italic">"Testimonial content will appear here soon..."</p>
                 </div>
+            </div>
 
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card p-8">
+            <!-- Coming Soon Card 2 -->
+            <div class="testimonial-card p-8 relative overflow-hidden bg-gradient-to-br from-red-900/20 to-red-800/10 border border-red-500/30">
+                <div class="absolute inset-0 bg-red-900/60 flex items-center justify-center z-10">
+                    <div class="text-center">
+                        <div id="bear-trap-2" class="mb-6">
+                            <!-- Bear Trap SVG -->
+                            <svg width="80" height="80" viewBox="0 0 100 100" class="mx-auto">
+                                <g fill="#dc2626" stroke="#991b1b" stroke-width="2">
+                                    <!-- Bottom jaw -->
+                                    <path d="M20 60 Q50 70 80 60 L75 50 Q50 65 25 50 Z" class="trap-bottom" />
+                                    <!-- Top jaw -->
+                                    <path d="M20 40 Q50 30 80 40 L75 50 Q50 35 25 50 Z" class="trap-top" />
+                                    <!-- Teeth bottom -->
+                                    <polygon points="25,55 30,45 35,55" />
+                                    <polygon points="35,55 40,45 45,55" />
+                                    <polygon points="45,55 50,45 55,55" />
+                                    <polygon points="55,55 60,45 65,55" />
+                                    <polygon points="65,55 70,45 75,55" />
+                                    <!-- Teeth top -->
+                                    <polygon points="25,45 30,55 35,45" />
+                                    <polygon points="35,45 40,55 45,45" />
+                                    <polygon points="45,45 50,55 55,45" />
+                                    <polygon points="55,45 60,55 65,45" />
+                                    <polygon points="65,45 70,55 75,45" />
+                                    <!-- Spring/hinge -->
+                                    <circle cx="20" cy="50" r="5" />
+                                    <circle cx="80" cy="50" r="5" />
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-red-400 mb-2">COMING SOON</h3>
+                        
+                    </div>
+                </div>
+                
+                <!-- Hidden content behind overlay -->
+                <div class="opacity-20">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 brown-gradient rounded-full flex items-center justify-center mr-4">
                             <i class="fas fa-user text-white"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-800">Ahmed Hassan</h4>
-                            <p class="text-sm text-gray-600">Data Scientist</p>
+                            <h4 class="font-semibold text-gray-800">Client Name</h4>
+                            <p class="text-sm text-gray-600">Position</p>
                         </div>
                     </div>
                     <div class="flex mb-4">
@@ -1054,18 +1165,54 @@
                         <i class="fas fa-star text-yellow-400"></i>
                         <i class="fas fa-star text-yellow-400"></i>
                     </div>
-                    <p class="text-gray-700 italic">"Working with Hazem was a great experience. His deep understanding of computer vision helped us solve complex image processing challenges."</p>
+                    <p class="text-gray-700 italic">"Testimonial content will appear here soon..."</p>
                 </div>
+            </div>
 
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card p-8">
+            <!-- Coming Soon Card 3 -->
+            <div class="testimonial-card p-8 relative overflow-hidden bg-gradient-to-br from-red-900/20 to-red-800/10 border border-red-500/30">
+                <div class="absolute inset-0 bg-red-900/60 flex items-center justify-center z-10">
+                    <div class="text-center">
+                        <div id="bear-trap-3" class="mb-6">
+                            <!-- Bear Trap SVG -->
+                            <svg width="80" height="80" viewBox="0 0 100 100" class="mx-auto">
+                                <g fill="#dc2626" stroke="#991b1b" stroke-width="2">
+                                    <!-- Bottom jaw -->
+                                    <path d="M20 60 Q50 70 80 60 L75 50 Q50 65 25 50 Z" class="trap-bottom" />
+                                    <!-- Top jaw -->
+                                    <path d="M20 40 Q50 30 80 40 L75 50 Q50 35 25 50 Z" class="trap-top" />
+                                    <!-- Teeth bottom -->
+                                    <polygon points="25,55 30,45 35,55" />
+                                    <polygon points="35,55 40,45 45,55" />
+                                    <polygon points="45,55 50,45 55,55" />
+                                    <polygon points="55,55 60,45 65,55" />
+                                    <polygon points="65,55 70,45 75,55" />
+                                    <!-- Teeth top -->
+                                    <polygon points="25,45 30,55 35,45" />
+                                    <polygon points="35,45 40,55 45,45" />
+                                    <polygon points="45,45 50,55 55,45" />
+                                    <polygon points="55,45 60,55 65,45" />
+                                    <polygon points="65,45 70,55 75,45" />
+                                    <!-- Spring/hinge -->
+                                    <circle cx="20" cy="50" r="5" />
+                                    <circle cx="80" cy="50" r="5" />
+                                </g>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-red-400 mb-2">COMING SOON</h3>
+                        
+                    </div>
+                </div>
+                
+                <!-- Hidden content behind overlay -->
+                <div class="opacity-20">
                     <div class="flex items-center mb-6">
                         <div class="w-12 h-12 orange-gradient rounded-full flex items-center justify-center mr-4">
                             <i class="fas fa-user text-white"></i>
                         </div>
                         <div>
-                            <h4 class="font-semibold text-gray-800">Maria Rodriguez</h4>
-                            <p class="text-sm text-gray-600">Project Manager</p>
+                            <h4 class="font-semibold text-gray-800">Client Name</h4>
+                            <p class="text-sm text-gray-600">Position</p>
                         </div>
                     </div>
                     <div class="flex mb-4">
@@ -1075,11 +1222,12 @@
                         <i class="fas fa-star text-yellow-400"></i>
                         <i class="fas fa-star text-yellow-400"></i>
                     </div>
-                    <p class="text-gray-700 italic">"Hazem's automation solution streamlined our workflow and saved us 30 hours per week. Professional, reliable, and innovative!"</p>
+                    <p class="text-gray-700 italic">"Testimonial content will appear here soon..."</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Contact Section (Call to Action) -->
     <section id="contact" class="py-32 bg-gradient-to-b from-black/40 to-black/60">
